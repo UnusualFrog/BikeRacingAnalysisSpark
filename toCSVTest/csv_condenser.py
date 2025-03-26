@@ -1,8 +1,13 @@
 import glob
+import os
 import pandas as pd
 
 directory_in_str = "..\\output\\fit\\"
 directory_out_str = "..\\output\\csv\\"
+
+if not os.path.exists(directory_out_str):
+    os.makedirs(directory_out_str)
+
 csv_files = glob.glob(directory_in_str+'\\*.{}'.format('csv'))
 count = 0
 file_count = 0

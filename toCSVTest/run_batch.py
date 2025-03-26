@@ -9,7 +9,7 @@ directory_in = os.fsencode(directory_in_str)
 for file in os.listdir(directory_in):
         filename = os.fsdecode(file)
         if filename.endswith(".fit"):
-            p = subprocess.Popen(['FitSDKRelease_21.158.00\\java\\FitToCSV.bat', "..\\output\\fit\\" + filename], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            p = subprocess.Popen(['FitSDKRelease_21.158.00\\java\\FitToCSV-record.bat', "..\\output\\fit\\" + filename], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
             p.stdin.write('\n')
             p.stdin.flush()

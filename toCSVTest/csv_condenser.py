@@ -10,7 +10,7 @@ if not os.path.exists(directory_out_str):
 
 csv_files = glob.glob(directory_in_str+'\\*_data.{}'.format('csv'))
 out = pd.DataFrame()
-output_file = directory_out_str + 'output_test2.csv'
+output_file = directory_out_str + 'output.csv'
 first_iteration = True
 count = 0
 for file in csv_files:

@@ -18,14 +18,18 @@ for file in csv_files:
     df = pd.read_csv(file, low_memory=False)
     file_name = file.split('\\')[-1]
     # array = ['Workout_'+str(count)] * df.shape[0]
-    array = [file_name] * df.shape[0]
-    df['ID'] = array
+    # array = [file_name] * df.shape[0]
+    # df['ID'] = array
+
+
+
+
     if first_iteration:
         out = df
         first_iteration = False
     else:
         out = pd.concat([out, df], axis=0, join='outer')
-out=out[['record.timestamp[s]', 'record.distance[m]', 'record.heart_rate[bpm]', 'record.power[watts]', 'record.enhanced_speed[m/s]', 'ID']]
+out=out[['record.timestamp[s]', 'record.distance[m]', 'record.heart_rate[bpm]', 'record.power[watts]', 'record.enhanced_speed[m/s]', 'GUID']]
 out.rename(columns={'record.timestamp[s]': 'timestamp[s]', 'record.distance[m]': 'distance[m]', 'record.heart_rate[bpm]': 'heart_rate[bpm]', 'record.power[watts]': 'power[watts]', 'record.enhanced_speed[m/s]': 'speed[m/s]'}, errors="raise", inplace=True)
 out.to_csv(output_file, index=False)
 print("Complete")

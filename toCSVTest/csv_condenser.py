@@ -17,12 +17,6 @@ for file in csv_files:
     count += 1
     df = pd.read_csv(file, low_memory=False)
     file_name = file.split('\\')[-1]
-    # array = ['Workout_'+str(count)] * df.shape[0]
-    # array = [file_name] * df.shape[0]
-    # df['ID'] = array
-
-
-
 
     if first_iteration:
         out = df
